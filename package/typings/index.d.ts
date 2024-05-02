@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { FC } from 'react';
+import {FC} from 'react';
 import * as ReactNative from 'react-native';
-import { ImageURISource } from 'react-native';
+import {ImageURISource} from 'react-native';
 
 type Constructor<T> = new (...args: any[]) => T;
 
@@ -23,12 +23,12 @@ export interface SliderRef {
 export type TrackMarksProps = {
   isTrue: boolean;
   thumbImage?: ImageURISource;
-  StepMarker?: FC<MarkerProps> | boolean;
-}
+  StepMarker?: FC<MarkerProps>;
+};
 
 export type MarkerProps = {
   stepMarked: boolean;
-}
+};
 
 export interface SliderPropsIOS extends ReactNative.ViewProps {
   /**
@@ -166,7 +166,7 @@ export interface SliderProps
   StepMarker?: FC<MarkerProps>;
 
   /**
-   * 
+   *
    */
   renderStepNumber?: boolean;
 

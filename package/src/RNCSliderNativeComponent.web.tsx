@@ -142,7 +142,9 @@ const RCTSliderWebComponent = React.forwardRef(
         // Ensure that the value is correctly rounded
         const hardRounded =
           decimalPrecision.current < 20
-            ? Number.parseFloat(newValue.toFixed(decimalPrecision.current))
+            ? Number.parseFloat(
+                (newValue || 0).toFixed(decimalPrecision.current),
+              )
             : newValue;
 
         // Ensure that the new value is still between the bounds
@@ -240,7 +242,7 @@ const RCTSliderWebComponent = React.forwardRef(
         width: thumbSize,
         height: thumbSize,
         backgroundColor: thumbTintColor,
-        zIndex: 1,
+        zIndex: 10,
         borderRadius: thumbSize / 2,
         overflow: 'hidden',
       },
